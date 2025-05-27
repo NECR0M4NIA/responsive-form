@@ -10,45 +10,47 @@ const $passwordInput = document.querySelector('#password');
 
 let inputs = [$nameInput, $lastNameInput, $emailInput, $passwordInput]
 
+document.addEventListener('DOMContentLoaded', function(e) {
+    $nameInput.focus()
+})
+
 $contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
     
-    let error = false;
-    
-    inputs.forEach(input => {
-        if (input.value.trim() === '') {
-            input.parentElement.classList.add('error');
-            error = true;
-            
+    inputs.forEach((input) => {
+        if (input.value.length === 0) {
+            console.log("Il n'y a rien")
+
             if (input === $nameInput) {
-                document.querySelector('.name-error-message').style.display = 'block';
+                document.getElementById('name').classList.add("input-error")
+                document.querySelector('.name-error-message').classList.remove("error-message")
             } else if (input === $lastNameInput) {
-                document.querySelector('.last-name-error-message').style.display = 'block';
+                document.getElementById('lastname').classList.add("input-error")
+                document.querySelector('.last-name-error-message').classList.remove("error-message")
+            } else if (input === $emailInput) {
+                document.getElementById('email').classList.add("input-error")
+                document.querySelector('.email-error-message').classList.remove("error-message")
             } else if (input === $passwordInput) {
-                document.querySelector('.password-error-message').style.display = 'block';
+                document.getElementById('password').classList.add("input-error")
+                document.querySelector('.password-error-message').classList.remove("error-message")
             }
+
         } else {
-            input.parentElement.classList.remove('error');
-            
+            console.log("Il y a quelque chose")
+
             if (input === $nameInput) {
-                document.querySelector('.name-error-message').style.display = 'none';
+                document.getElementById('name').classList.remove("input-error")
+                document.querySelector('.name-error-message').classList.add("error-message")
             } else if (input === $lastNameInput) {
-                document.querySelector('.last-name-error-message').style.display = 'none';
+                document.getElementById('lastname').classList.remove("input-error")
+                document.querySelector('.last-name-error-message').classList.add("error-message")
+            } else if (input === $emailInput) {
+                document.getElementById('email').classList.remove("input-error")
+                document.querySelector('.email-error-message').classList.add("error-message")
             } else if (input === $passwordInput) {
-                document.querySelector('.password-error-message').style.display = 'none';
+                document.getElementById('password').classList.remove("input-error")
+                document.querySelector('.password-error-message').classList.add("error-message")
             }
         }
-        
-        if (input === $emailInput) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(input.value.trim())) {
-                input.parentElement.classList.add('error');
-                document.querySelector('.email-error-message').style.display = 'block';
-                error = true;
-            } else {
-                input.parentElement.classList.remove('error');
-                document.querySelector('.email-error-message').style.display = 'none';
-            }
-        }
-    });
+    })
 })

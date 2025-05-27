@@ -38,7 +38,7 @@ h1 {
     text-align: center;
     padding: 18px 56px;
     border-radius: 12px;
-    box-shadow: 0 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px rgba(0, 0, 0, 0.25);
     margin-top: 64px;
     margin-bottom: 24px;
 }
@@ -51,7 +51,7 @@ form[action="contact"] {
     background: #FFFFFF;
     border-radius: 12px;
     padding: 24px;
-    box-shadow: 0 8px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px rgba(0, 0, 0, 0.25);
 }
 
 form[action="contact"] input {
@@ -61,6 +61,20 @@ form[action="contact"] input {
     padding: 15px 20px;
     width: 100%;
     margin: 8px 0;
+}
+
+.input-error {
+    outline: none;
+    border-radius: 6px;
+    border: #FF7979 solid 2px;
+    padding: 15px 20px;
+    width: 100%;
+    margin: 8px 0;
+
+    background-image: url(../icons/error-icon.svg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 98%;
 }
 
 form[action="contact"] input:focus {
@@ -80,8 +94,8 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background: #2c9f6d;
-    box-shadow: 0 6px #176b47;
+    background: #298f63;
+    box-shadow: 0 8px #19734c;
     cursor: pointer;
 }
 
@@ -106,6 +120,30 @@ button[type="submit"]:active {
     display: none;
 }
 
+.error-icon[data-error="1"] {
+    position: absolute;
+    top: 326px;
+    right: 146px;
+}
+
+.error-icon[data-error="2"] {
+    position: absolute;
+    top: 424px;
+    right: 146px;
+}
+
+.error-icon[data-error="3"] {
+    position: absolute;
+    top: 522px;
+    right: 146px;
+}
+
+.error-icon[data-error="4"] {
+    position: absolute;
+    top: 620px;
+    right: 146px;
+}
+
 .name-error-message,
 .last-name-error-message,
 .email-error-message,
@@ -113,7 +151,7 @@ button[type="submit"]:active {
     color: #FF7979;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1023px) {
     body {
         display: flex;
         align-items: center;
@@ -121,7 +159,8 @@ button[type="submit"]:active {
         min-height: 100vh;
     }
 
-    .main-content,.form-container {
+    .main-content,
+    .form-container {
         width: 100%;
         margin: 0 86px;
     }

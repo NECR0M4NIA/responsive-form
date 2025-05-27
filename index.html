@@ -8,7 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- TITLE -->
-    <title>Document</title>
+    <title>Responsive Contact Form</title>
+
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./assets/icons/error-icon.svg" type="image/x-icon">
 
     <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/normalize.css">
@@ -32,11 +36,8 @@
 
         <form id="contact-form" action="contact">
             <div>
-                <div>
-                    <label for="name">Name</label>
-                    <input id="name" type="text" placeholder="Name">
-                    <!-- svg -> en position absolute -->
-                </div>
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Name">
                 <span class="error-message name-error-message">First name cannot be empty</span>
             </div>
 
@@ -62,8 +63,7 @@
 
             <p class="terms-text">By clicking the button, you are agreeing to our <a class="terms-link" href="#">Terms
                     and Services</a></p>
-        </form>
-    </section>
+        </form>    </section>
 
     <script src="./assets/js/app.js"></script>
 
